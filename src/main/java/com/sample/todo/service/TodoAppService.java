@@ -26,8 +26,19 @@ public class TodoAppService {
         return dao.getTodoAppList();
     }
 
-    public void register(String title, String detail) {
+    public void register(String title, String detail, String category) {
         int nextId = dao.getNextId();
-        dao.insert(nextId, title, detail);
+        /**
+         * カテゴリを追加
+         */
+        dao.insert(nextId, title, detail, category);
     }
+
+    /**
+     * 削除メソッド
+     */
+    public void delete(){
+        
+    }
+
 }

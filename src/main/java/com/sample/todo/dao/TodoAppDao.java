@@ -32,11 +32,19 @@ public class TodoAppDao {
         return ++maxTodoId;
     }
 
-    public <T> void insert(int todoId, String title, String detail) {
+    public <T> void insert(int todoId, String title, String detail, String category) {
         MapSqlParameterSource paramMap = new MapSqlParameterSource();
         paramMap.addValue("todoId", todoId);
         paramMap.addValue("title", title);
         paramMap.addValue("detail", detail);
-        jdbcTemplate.update("INSERT INTO TODO_APP VALUES(:todoId, :title, :detail)", paramMap);
+        /**
+         * カテゴリを追加
+         */
+        paramMap.addValue("cateory", category);
+        jdbcTemplate.update("INSERT INTO TODO_APP VALUES(:todoId, :title, :detail, :category)", paramMap);
+    }
+
+    public void delete() {
+        
     }
 }

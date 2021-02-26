@@ -15,6 +15,10 @@ public class TodoApp implements Serializable {
     private int todoId;
     private String title;
     private String detail;
+    /**
+     * カテゴリを追加
+     */
+    private String category;
 
     public TodoApp() {
     }
@@ -41,5 +45,16 @@ public class TodoApp implements Serializable {
 
     public void setDetail(String detail) {
         this.detail = detail;
+    }
+    /**
+     * カテゴリを追加
+     */
+
+    public String getCategory() {
+        return this.category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }

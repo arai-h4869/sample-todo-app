@@ -29,6 +29,14 @@ table td.detail {
     padding: 10px;
 }
 
+/**
+*カテゴリを追加
+*/
+table td.category {
+    width: 150px;
+    padding: 10px;
+}
+
 .operation-area{
     margin: 10px;
 }

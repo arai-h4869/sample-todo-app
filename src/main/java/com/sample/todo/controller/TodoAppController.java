@@ -39,7 +39,13 @@ public class TodoAppController {
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     String register(@ModelAttribute TodoApp todoApp, Model model) {
-        service.register(todoApp.getTitle(), todoApp.getDetail());
+        service.register(todoApp.getTitle(), todoApp.getDetail(), todoApp.getCategory());
+        return "redirect:index";// 登録したらindexに移る
+    }
+
+    @RequestMapping(value = "/delete", method = RequestMethod.POST)
+    String delete(@ModelAttribute TodoApp todoApp, Model model) {
+        service.delete();
         return "redirect:index";// 登録したらindexに移る
     }
 }
